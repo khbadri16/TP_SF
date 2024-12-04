@@ -62,7 +62,7 @@ def t_STEREO(t):
 #  the choice of allowed characters ultimately depends on the language designer's specifications.
 # For now, we’ll proceed with the current lexical analyzer solution, as it meets the requirements you've outlined.
 def t_ACTOR_TEXT(t):
-    r':[a-zA-Z][a-zA-Z0-9 ]+:'
+    r':[a-zA-Z ][a-zA-Z0-9 ]+:'
     # reduce space number :main      actor: = :main actor:
     t.value = ' '.join(t.value[1:-1].split())
     return t
@@ -77,8 +77,9 @@ def t_COLON(t):
 
 
 def t_USE_CASE_TEXT(t):
-    r'\([^\(\)]+\)'
-    t.value = t.value[1:-1]
+    # Allows letters, numbers, and spaces, but doesn't start with a number
+    r'\([a-zA-Z ][a-zA-Z0-9 ]*\)'
+    t.value = ' '.join(t.value[1:-1].split())
     return t
 
 
