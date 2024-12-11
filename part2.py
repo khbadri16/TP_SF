@@ -210,10 +210,7 @@ def p_empty(p):
 
 
 def p_error(p):
-    if p:
-        raise SyntaxError(f"Syntax error at '{p.value}'")
-    else:
-        raise SyntaxError("Syntax error at EOF")
+    raise ValueError("Syntax Error")
 
 
 parser = yacc.yacc()
