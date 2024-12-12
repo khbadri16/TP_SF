@@ -28,8 +28,8 @@ def t_STRING(t):
 def t_STEREO(t):
     # We added a - in the regular expression according to your first example: :Main Admin: as Admin <<Not-a-machine>>
     r"<< [a-zA-Z_][a-zA-Z_0-9-] *>>"
-    #Do you mean [2:-2] in the solution ? 
-    #Making it [3:-3] will cause a loss in information: a letter at the beginning and a letter at the end. 'Not-a-machine' will become 'ot-a-machin'
+    # Do you mean [2:-2] in the solution ?
+    # Making it [3:-3] will cause a loss in information: a letter at the beginning and a letter at the end. 'Not-a-machine' will become 'ot-a-machin'
     t.value = t.value[2:-2]
     return t
 
