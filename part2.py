@@ -102,10 +102,8 @@ def p_one_def(p):
                 | empty"""
     if len(p) == 5:
         p[0] = ('one_def =>', p[1], p[2], p[3], p[4])
-    elif len(p) == 6 and p[1] == 'PACKAGE':
+    elif len(p) == 6:
         p[0] = ('package', p[2], p[4])
-    elif len(p) == 5:
-        p[0] = ('link', p[1], p[2], p[3], p[4])
     elif len(p) == 4:
         p[0] = ('inherit', p[1], p[2], p[3])
 
