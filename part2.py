@@ -169,13 +169,10 @@ def p_empty(p):
 
 
 def p_error(p):
-    if p:
-        raise SyntaxError(
-            f"Syntax error at '{p.value}', line {
-                p.lexer.lineno}, position {p.lexpos}"
-        )
-    else:
-        raise SyntaxError("Syntax error at EOF")
+    raise SyntaxError(
+        f"Syntax error at '{p.value}', line {
+            p.lexer.lineno}, position {p.lexpos}"
+    )
 
 
 parser = yacc.yacc()
