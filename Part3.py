@@ -161,7 +161,7 @@ class Package:
         self.one_defs = one_defs
 
         if ID in table_of_ID:
-            raise ValueError(f"Name conflict: ID : '{ID}'.")
+            raise SemanticError(f"Name conflict: ID : '{ID}'.")
         table_of_ID[ID] = None
 
     def __repr__(self):
