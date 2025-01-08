@@ -314,8 +314,7 @@ def p_error(p):
 lexer = lex.lex()
 parser = yacc.yacc()
 
-lexer.input("""@startuml Administration
-actor :System:
+lexer.input("""@startuml System
 actor :User:
 usecase (Define travel)
 usecase (Set VIP options)
